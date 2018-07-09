@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Transaction Trace Simulator</title>
+  <style type="text/css">
+    body {
+      font: 100 90%/1.2em 'Verdana', sans-serif;
+    }
+
+    figcaption {
+      line-height: 4rem;
+    }
+
+  </style>
+  <link href="./all.css" rel="stylesheet">
+</head>
+<body>
+
+  <section>
+    <h1>Transaction Traces</h1>
+
+    <blockquote>
+      In <a href="https://docs.newrelic.com/docs/apm/new-relic-apm">New Relic APM</a>, a transaction trace gives a detailed snapshot of a single transaction in your application. A transaction trace records the available function calls, database calls, and external calls. You can use transaction traces to troubleshoot performance issues and to get detailed low-level insight into how your app is working.
+    </blockquote>
+
+    <section>
+      <h2>Visualizing a Transaction Trace</h2>
+      <p>A trace lists function calls both nested an sequential. Additionally, if there are remote call to service endpoints these will be included in the trace given that instrumentation is available.</p>
+
+      <figure>
+        <div id="traceUi"></div>
+        <figcaption>A Sample Transaction Trace</figcaption>
+      </figure>
+    </section>
+  </section>
+
+  <script type="application/json" id="traceData">
+  [
+    1525274568.1336966,
+    {},
+    {},
+    [
+      0,
+      6698,
+      "ROOT",
+      {},
+      [
+        [
+          0,
+          6698,
+          "Nested/Controller/Rack/AlertingUi::Application/call",
+          {},
+          [
+            [
+              0,
+              6697,
+              "Middleware/Rack/Rack::Sendfile/call",
+              {},
+              [
+                [
+                  0,
+                  6697,
+                  "Middleware/Rack/ActionDispatch::RemoteIp/call",
+                  {},
+                  [
+                    [
+                      0,
+                      6697,
+                      "Middleware/Rack/IgnoreWhitehatTransactions::Middleware/call",
+                      {},
+                      [
+                        [
+                          1,
+                          6697,
+                          "Middleware/Rack/Rack::Runtime/call",
+                          {},
+                          [
+                            [
+                              1,
+                              6697,
+                              "Middleware/Rack/Rack::MethodOverride/call",
+                              {},
+                              [
+                                [
+                                  1,
+                                  6697,
+                                  "Middleware/Rack/ActionDispatch::RequestId/call",
+                                  {},
+                                  [
+                                    [
+                                      1,
+                                      6697,
+                                      "Middleware/Rack/RequestStore::Middleware/call",
+                                      {},
+                                      [
+                                        [
+                                          1,
+                                          6697,
+                                          "Middleware/Rack/Rails::Rack::Logger/call",
+                                          {},
+                                          [
+                                            [
+                                              1,
+                                              6697,
+                                              "Middleware/Rack/ActionDispatch::ShowExceptions/call",
+                                              {},
+                                              [
+                                                [
+                                                  1,
+                                                  6697,
+                                                  "Middleware/Rack/ActionDispatch::DebugExceptions/call",
+                                                  {},
+                                                  [
+                                                    [
+                                                      1,
+                                                      6697,
+                                                      "Middleware/Rack/ActionDispatch::Callbacks/call",
+                                                      {},
+                                                      [
+                                                        [
+                                                          1,
+                                                          6697,
+                                                          "Middleware/Rack/ActionDispatch::Cookies/call",
+                                                          {},
+                                                          [
+                                                            [
+                                                              1,
+                                                              6697,
+                                                              "Middleware/Rack/ActionDispatch::Session::CookieStore/call",
+                                                              {},
+                                                              [
+                                                                [
+                                                                  1,
+                                                                  6697,
+                                                                  "Middleware/Rack/ActionDispatch::Flash/call",
+                                                                  {},
+                                                                  [
+                                                                    [
+                                                                      1,
+                                                                      6697,
+                                                                      "Middleware/Rack/ActionDispatch::ParamsParser/call",
+                                                                      {},
+                                                                      [
+                                                                        [
+                                                                          1,
+                                                                          6697,
+                                                                          "Middleware/Rack/Rack::Head/call",
+                                                                          {},
+                                                                          [
+                                                                            [
+                                                                              1,
+                                                                              6697,
+                                                                              "Middleware/Rack/Rack::ConditionalGet/call",
+                                                                              {},
+                                                                              [
+                                                                                [
+                                                                                  1,
+                                                                                  6697,
+                                                                                  "Middleware/Rack/Rack::ETag/call",
+                                                                                  {},
+                                                                                  [
+                                                                                    [
+                                                                                      1,
+                                                                                      6697,
+                                                                                      "Middleware/Rack/Rack::Attack/call",
+                                                                                      {},
+                                                                                      [
+                                                                                        [
+                                                                                          1,
+                                                                                          6697,
+                                                                                          "Middleware/Rack/NewRelic::Rack::BrowserMonitoring/call",
+                                                                                          {},
+                                                                                          [
+                                                                                            [
+                                                                                              1,
+                                                                                              6697,
+                                                                                              "Middleware/Rack/NewRelic::Rack::AgentHooks/call",
+                                                                                              {},
+                                                                                              [
+                                                                                                [
+                                                                                                  1,
+                                                                                                  6697,
+                                                                                                  "Middleware/Rack/ActionDispatch::Routing::RouteSet/call",
+                                                                                                  {},
+                                                                                                  [
+                                                                                                    [
+                                                                                                      2,
+                                                                                                      6697,
+                                                                                                      "Nested/Controller/incidents/acknowledge_from_external_url",
+                                                                                                      {},
+                                                                                                      [
+                                                                                                        [
+                                                                                                          70,
+                                                                                                          379,
+                                                                                                          "External/service-a.example.com/Net::HTTP/GET",
+                                                                                                          {
+                                                                                                            "uri": "http://service-a.example.com/authorization/v1/accounts/x/principal/y"
+                                                                                                          },
+                                                                                                          []
+                                                                                                        ],
+                                                                                                        [
+                                                                                                          380,
+                                                                                                          388,
+                                                                                                          "External/service-b.example.com/Net::HTTP/POST",
+                                                                                                          {
+                                                                                                            "uri": "http://service-b.example.com/alert/v1/api"
+                                                                                                          },
+                                                                                                          []
+                                                                                                        ],
+                                                                                                        [
+                                                                                                          388,
+                                                                                                          6696,
+                                                                                                          "External/service-b.example.com/Net::HTTP/POST",
+                                                                                                          {
+                                                                                                            "uri": "http://service-b.example.com/alert/v1/api"
+                                                                                                          },
+                                                                                                          []
+                                                                                                        ]
+                                                                                                      ]
+                                                                                                    ]
+                                                                                                  ]
+                                                                                                ]
+                                                                                              ]
+                                                                                            ]
+                                                                                          ]
+                                                                                        ]
+                                                                                      ]
+                                                                                    ]
+                                                                                  ]
+                                                                                ]
+                                                                              ]
+                                                                            ]
+                                                                          ]
+                                                                        ]
+                                                                      ]
+                                                                    ]
+                                                                  ]
+                                                                ]
+                                                              ]
+                                                            ]
+                                                          ]
+                                                        ]
+                                                      ]
+                                                    ]
+                                                  ]
+                                                ]
+                                              ]
+                                            ]
+                                          ]
+                                        ]
+                                      ]
+                                    ]
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ],
+    {
+      "agentAttributes": {
+        "httpResponseCode": "302",
+        "response.headers.contentType": "text/html; charset=utf-8",
+        "request.headers.accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+        "request.headers.host": "foo.example.com",
+        "request.headers.userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36",
+        "request.method": "GET",
+        "host.displayName": "192.168.0.2:8080"
+      },
+      "userAttributes": {
+        "customer_account_id": 864720,
+        "remote_address": "192.168.0.1"
+      },
+      "intrinsics": {
+        "gc_time": 0.018420222000372632,
+        "cpu_time": 0.06999999999999318,
+        "trip_id": "4986386412fc695f",
+        "path_hash": "755e97c9"
+      }
+    }
+  ]
+  </script>
+
+  <script type="text/javascript" src="./bundle.js"></script>
+</body>
+</html>

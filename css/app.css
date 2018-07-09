@@ -1,0 +1,29 @@
+.App {
+    position: static;
+    height: auto;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    clip: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.App-header {
+    height: auto;
+    padding: 0;
+    display: table-row;
+    margin-bottom: 20px;
+}
+
+.App-title {
+  font-size: 1.1em;
+}
+
+.full-view {
+    width: 100%;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+

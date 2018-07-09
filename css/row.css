@@ -1,0 +1,43 @@
+.row {
+    display: table-row;
+    height: auto;
+    padding: 0;
+    margin-bottom: 20px;
+    vertical-align: top;
+}
+
+.row-slowest-segment {
+    color: #800002;
+}
+
+.row-duration {
+    width: 110px;
+    border-bottom: 1px solid #ccc
+}
+
+.row-duration-percentage {
+    width: 150px;
+    border-bottom: 1px solid #ccc
+}
+
+.row-duration-name {
+    width: 250px;
+    border-bottom: 1px solid #ccc
+}
+
+.row-duration-timestamp {
+    width: 110px;
+    border-bottom: 1px solid #ccc
+}
+
+.row-percentage-bar {
+    width: 55%;
+    display: inline-grid;
+    padding-right: 5px;
+}
+
+.row-percentage {
+    width: 20%;
+    display: inline-grid;
+    vertical-align: inherit;
+}

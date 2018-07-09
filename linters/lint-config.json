@@ -1,0 +1,25 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "document": true,
+    "afterEach": true,
+    "beforeEach": true,
+    "browser": true,
+    "console": true,
+    "describe": true,
+    "expect": true,
+    "it": true,
+    "jasmine": true,
+    "require": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreUrls": true
+      }
+    ]
+  }
+}
