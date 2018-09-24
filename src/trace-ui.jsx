@@ -23,6 +23,7 @@ class TraceUi extends Component {
     const { traceData } = this.state;
     return (
       <div className="App">
+        <button onClick={() => this.forceUpdate()}>Refresh App</button>
         <table className="full-view">
           <TraceHeader />
           <tbody>
